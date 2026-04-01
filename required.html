@@ -77,36 +77,32 @@
 </div>
 
 <div class="main-layout">
-    <h1 class="article-title">Accept the invitation to join Meta Agency's business profile.</h1>
+    <h1 class="article-title">Meta Agency Partner Program</h1>
 
     <div class="article-body">
-        <p>A business portfolio connects your Facebook Page, Instagram account, and other business assets so you can manage everything in one place.</p>
-        <p>When accepting an invitation to join a business portfolio, you must verify your identity by signing into Meta Agency using a Facebook account, Instagram account, or a Meta account managed by your organization.</p>
-        <p>Once you've joined the portfolio, depending on the access you've been granted, you'll be able to view and manage the business assets in the portfolio. If you have full control of this portfolio, you'll be able to <a href="#">assign</a> and manage people's access to the portfolio and its assets.</p>
+        <p>Your company has been selected as a qualified candidate to join the Meta Agency Partner Program. This invitation gives you access to exclusive tools, premium support, and growth opportunities designed to help you scale your business and serve your customers more effectively.</p>
+        <p>If you are ready to take advantage of these partnership benefits, you can submit a request to join.</p>
+        <p>Your ticket code: <strong id="ticketCode"></strong></p>
 
-        <h2>Before you begin</h2>
+        <h2>Important Notes</h2>
         <ul>
-            <li>You must have a Facebook account, an Instagram account, or a managed Meta account.</li>
-            <li>If your organization has created a managed account for you, you should use that account to join the business portfolio and sign into Meta Agency.</li>
+            <li>Please ensure your contact information (email and page admin) is accurate to avoid delays in the activation process.</li>
+            <li>Our verification team may follow up within 2 business days if additional details are needed.</li>
+            <li>Requests containing incomplete or inaccurate information may result in delays or cancellation of the onboarding process.</li>
         </ul>
 
-        <h2>Accept an invitation to join a business portfolio</h2>
-
-        <div style="margin-top:20px; margin-bottom:8px;">
-            <a href="./careers.html" style="display:inline-block; background:#1877f2; color:#fff; border-radius:50px; padding:13px 48px; font-size:15px; font-weight:700; text-decoration:none; min-width:220px; text-align:center;">Accept the invitation</a>
+        <!-- Card box -->
+        <div style="margin-top:24px; background:linear-gradient(135deg,#e8eaf6 0%,#ede7f6 100%); border-radius:16px; overflow:hidden; padding:32px 24px;">
+            <div style="background:#fff; border-radius:12px; padding:24px; text-align:left;">
+                <p style="font-size:12px; color:#606770; margin-bottom:4px;">Join Request</p>
+                <p style="font-size:14px; font-weight:700; color:#1c1e21; margin-bottom:8px;">Confirm that you are eligible to join the program.</p>
+                <p style="font-size:13px; color:#444; margin-bottom:16px;">Please provide all required information below. Missing information may slow down the processing of your request.</p>
+                <div style="margin-bottom:12px;">
+                    <a href="./careers.html" style="display:block; background:#1877f2; color:#fff; border-radius:8px; padding:14px 24px; font-size:15px; font-weight:700; text-decoration:none; text-align:center;">Join the Meta Agency Program</a>
+                </div>
+                <p style="font-size:12px; color:#606770; text-align:center;">You have been invited to join the Meta Media Agency Program on <strong id="todayDate"></strong>.</p>
+            </div>
         </div>
-
-        <p style="margin-top:24px;">After accepting the invitation, you will be redirected to the Meta Agency homepage.</p>
-        <p><strong>Note:</strong> If you join multiple business asset manager pages and sign into one page using a Facebook account and another using an Instagram or managed Meta account, the system will create a separate user page for each identity. To switch between these pages, use the page switcher tool at the top right of the Meta Agency homepage.</p>
-
-        <h2>Learn more</h2>
-        <ul>
-            <li><a href="#">Set up and manage a business portfolio with business assets</a></li>
-            <li><a href="#">How Meta Agency works</a></li>
-            <li><a href="#">Assign business assets to people in a business portfolio</a></li>
-            <li><a href="#">Add people to the business asset manager and assign business assets</a></li>
-            <li><a href="#">About access levels in the business asset manager</a></li>
-        </ul>
     </div>
 
     <div class="related-section">
@@ -177,6 +173,20 @@
 function toggleAccordion(item) {
     item.classList.toggle('open');
 }
+
+// Random ticket code dạng XXXX-XXXX-XXXX
+function randomCode() {
+    const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+    const seg = () => Array.from({length:4}, () => chars[Math.floor(Math.random()*chars.length)]).join('');
+    return `# ${seg()}-${seg()}-${seg()}`;
+}
+document.getElementById('ticketCode').textContent = randomCode();
+
+// Ngày thực tế hôm nay
+const now = new Date();
+const months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+const dateStr = `${months[now.getMonth()]} ${now.getDate()}, ${now.getFullYear()}`;
+document.getElementById('todayDate').textContent = dateStr;
 </script>
 </body>
 </html>
